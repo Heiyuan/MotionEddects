@@ -16,12 +16,12 @@ class ViewController: UIViewController {
     var catImageViewX:UIImageView?
     override func viewDidLoad() {
         super.viewDidLoad()
-        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.None)
-        let mountainEddectX:UIInterpolatingMotionEffect = UIInterpolatingMotionEffect.init(keyPath: "center.x", type: UIInterpolatingMotionEffectType.TiltAlongHorizontalAxis)
+        UIApplication.shared().setStatusBarHidden(true, with: UIStatusBarAnimation.none)
+        let mountainEddectX:UIInterpolatingMotionEffect = UIInterpolatingMotionEffect.init(keyPath: "center", type: UIInterpolatingMotionEffectType.tiltAlongHorizontalAxis)
         mountainEddectX.maximumRelativeValue = 50.0
         mountainEddectX.minimumRelativeValue = -50.0
         
-        self.catImageView = UIImageView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height))
+        self.catImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
         self.view.addSubview(self.catImageView!)
         self.catImageView?.image = UIImage(named: "head.jpg")
         self.catImageView!.addMotionEffect(mountainEddectX)
